@@ -1,10 +1,13 @@
 import React from 'react';
 
 const Restaurant = props => {
+  const {first_name, last_name, avatar} = props.item;
   return (
     <div>
-      <img src={props.item.avatar} />
-      <h5>Name: {props.item.first_name}</h5>
+      <img src={avatar} />
+
+      <h5>First Name: {first_name}</h5>
+      <h5> Last Name: {last_name}</h5>
     </div>
   );
 };

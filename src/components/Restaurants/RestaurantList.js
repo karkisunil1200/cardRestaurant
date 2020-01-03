@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 import Restaurant from './Restaurant';
 
@@ -19,10 +20,12 @@ const RestaurantList = () => {
   }, []);
   return (
     <div>
-      <h3> Welcome to the Restaurant</h3>
-
       {restaurant.map(item => {
-        return <Restaurant item={item} key={item.id} />;
+        return (
+          <Link to={`/restaurantList/${item.id}`}>
+            <Restaurant item={item} key={item.id} />;
+          </Link>
+        );
       })}
     </div>
   );
